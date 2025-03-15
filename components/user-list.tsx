@@ -15,9 +15,9 @@ export default async function UserList() {
                                 <Image
                                     src={user.avatar || ""}
                                     alt="avatar"
-                                    width={30}
-                                    height={30}
-                                    className="rounded-full object-contain"
+                                    width={100}
+                                    height={100}
+                                    className="rounded-full size-8 object-cover"
                                 />
                                 <h2>{user.username}</h2>
                             </CardTitle>
