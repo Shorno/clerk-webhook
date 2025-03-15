@@ -68,6 +68,8 @@ export async function POST(req: Request) {
         }
     }
 
+    //update secret
+
     if (eventType === "user.updated") {
         try {
             await prisma.user.update({
