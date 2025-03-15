@@ -93,22 +93,27 @@ export async function POST(req: Request) {
     }
 
     if (eventType === "user.deleted") {
+        const userId = evt.data.id;
 
-        if (!evt.data.id) return;
+        if (!userId) {
+            console.error("Error: Missing user ID for deletion");
+            return new Response("Error: Missing user ID", {
+                status: 400,
+            });
+        }
 
         try {
             await prisma.user.delete({
                 where: {
-                    id: evt.data.id,
+                    id: userId,
                 }
-            })
-
+            });
+            console.log(`User with ID ${userId} deleted successfully`);
         } catch (error) {
-            console.log(error)
-            return new Response("Error : Failed to delete a user!", {
+            console.error("Error: Failed to delete user:", error);
+            return new Response("Error: Failed to delete user", {
                 status: 500,
-
-            })
+            });
         }
     }
 
