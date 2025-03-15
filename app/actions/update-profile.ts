@@ -4,7 +4,7 @@ import { prisma } from "@/lib/prisma"
 import { auth } from "@clerk/nextjs/server"
 import { revalidatePath } from "next/cache"
 import { z } from "zod"
-import {updateProfileSchema} from "@/schema/updateProfile";
+import {updateProfileSchema} from "@/schema/schemas";
 
 type UpdateProfileResponse = {
     success: boolean

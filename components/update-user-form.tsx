@@ -10,7 +10,7 @@ import { Button } from "@/components/ui/button"
 import { useState } from "react"
 import { Loader2 } from "lucide-react"
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import {updateProfileSchema} from "@/schema/updateProfile";
+import {updateProfileSchema} from "@/schema/schemas";
 import {zodResolver} from "@hookform/resolvers/zod";
 import { toast } from "sonner"
 
